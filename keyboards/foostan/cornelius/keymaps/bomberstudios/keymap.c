@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
     ZOOMLEFT,CTL_A,   ALT_R,   CMD_S,   SHT_T,   KC_D,    KC_H,    SHT_N,   CMD_E,   ALT_I,   CTL_O,   ZOOMRIGHT,
-    ZOOMFULL,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, ZOOMFULL,
+    ZOOMFULL,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MOVETOLAPTOP,
     EMOJI,   _______, _______, L_SYM,   L_NUM,   KC_BSPC, SPC_3,   L_SYM,   L_NUM,   _______, _______, KC_ENT
   ),
   [_QWERTY] = LAYOUT(
