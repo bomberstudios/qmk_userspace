@@ -1,6 +1,9 @@
 // Cornelius
 #include QMK_KEYBOARD_H
 
+// Keyboard Layers
+enum layers { _COLEMAK, _QWERTY, _MOVE, _NUMBER, _SYMBOL, _ADJUST };
+
 enum cornelius_custom_keycodes {
   M_EMAIL = SAFE_RANGE,
   CPYPASTE,
@@ -8,7 +11,8 @@ enum cornelius_custom_keycodes {
   CTL_TAB,
   RANDOM,
   M_PASS,
-  M_PASS2
+  M_PASS2,
+  GLOBE
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -28,6 +32,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING(SECRET_PASSWORD_2);
       }
       return false;
+    case GLOBE:
+      if (record->event.pressed) {
+        host_consumer_send(AC_NEXT_KEYBOARD_LAYOUT_SELECT);
+      } else {
+        host_consumer_send(0);
+      }
+      return false;
   }
   return true;
 };
@@ -37,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
     ZOOMLEFT,CTL_A,   ALT_R,   CMD_S,   SHT_T,   KC_D,    KC_H,    SHT_N,   CMD_E,   ALT_I,   CTL_O,   ZOOMRIGHT,
     ZOOMFULL,KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, MOVETOLAPTOP,
-    EMOJI,   _______, _______, L_SYM,   L_NUM,   KC_BSPC, SPC_3,   L_SYM,   L_NUM,   _______, _______, KC_ENT
+    EMOJI,   _______, _______, GLOBE,   L_NUM,   KC_BSPC, SPC_3,   L_SYM,   L_NUM,   _______, _______, KC_ENT
   ),
   [_QWERTY] = LAYOUT(
     _______, _______, _______, KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    _______,

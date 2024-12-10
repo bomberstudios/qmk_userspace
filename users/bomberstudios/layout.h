@@ -1,6 +1,3 @@
-// Keyboard Layers
-enum layers { _COLEMAK, _QWERTY, _MOVE, _NUMBER, _SYMBOL, _ADJUST };
-
 // Keycodes
 
 // Window movement
