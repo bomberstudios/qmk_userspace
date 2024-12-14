@@ -1,9 +1,39 @@
 // z34
-
 #include QMK_KEYBOARD_H
 
 // Keyboard Layers
 enum layers { _COLEMAK, _QWERTY, _MOVE, _NUMBER, _SYMBOL, _ADJUST };
+
+enum custom_keycodes { M_EMAIL = SAFE_RANGE, CPYPASTE, CMD_TAB, CTL_TAB, RANDOM, M_PASS, M_PASS2, GLOBE };
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  switch (keycode) {
+    case M_EMAIL:
+      if (record->event.pressed) {
+        SEND_STRING(SECRET_EMAIL);
+      }
+      return false;
+    case M_PASS:
+      if (record->event.pressed) {
+        SEND_STRING(SECRET_PASSWORD);
+      }
+      return false;
+    case M_PASS2:
+      if (record->event.pressed) {
+        SEND_STRING(SECRET_PASSWORD_2);
+      }
+      return false;
+    case GLOBE:
+      if (record->event.pressed) {
+        host_consumer_send(AC_NEXT_KEYBOARD_LAYOUT_SELECT);
+      } else {
+        host_consumer_send(0);
+      }
+      return false;
+  }
+  return true;
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
@@ -33,13 +63,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_SYMBOL] = LAYOUT(
     KC_EXLM,   KC_AT, KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
     M_EMAIL, _______, KC_GRV,  KC_QUOT, KC_COLN, KC_BSLS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC,
-    RESET,   _______, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
+    QK_BOOT,   _______, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
                                L_ADJ,   KC_DEL,  _______, _______
   ),
   [_ADJUST] = LAYOUT(
     QWERTY,  COLEMAK, KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_VOLU,
     M_EMAIL, _______, KC_GRV,  KC_QUOT, KC_COLN, KC_BSLS, KC_MPLY, KC_EQL,  KC_LBRC, KC_MUTE,
-    RESET,   _______, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_VOLD,
+    QK_BOOT,   _______, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_VOLD,
                                L_ADJ,   KC_DEL,  _______, _______
   )
 };
