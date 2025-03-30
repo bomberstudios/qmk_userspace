@@ -4,9 +4,9 @@
 
 #undef TAPPING_TERM
 
-// #define PERMISSIVE_HOLD // turning this off because it kinda defeats the
-// purpose of having a long tapping term for Alt and Control
-// #define IGNORE_MOD_TAP_INTERRUPT // This is now the default in QMK
+// Reenabling this because apparently I'm no longer using custom tapping terms per key
+#define PERMISSIVE_HOLD
+#define CHORDAL_HOLD // See https://docs.qmk.fm/tap_hold#chordal-hold
 // #define TAPPING_FORCE_HOLD
 
 // #define HOLD_ON_OTHER_KEY_PRESS
@@ -37,7 +37,7 @@
 // #include "tap_dances.h"
 // #endif
 
-#define COMBO_COUNT 28
+#define COMBO_COUNT 29
 // There's a way to make this dynamic, see
 // https://github.com/whydobearsxplod/qmk_user_folder for more info
 

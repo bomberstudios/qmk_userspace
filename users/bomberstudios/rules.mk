@@ -13,6 +13,10 @@ ifeq ($(strip($(KEYBOARD))),ferris/sweep)
   SPLIT_KEYBOARD = yes
 endif
 
+ifeq ($(strip($(KEYBOARD))),zigotica/z34)
+  SPLIT_KEYBOARD = yes
+endif
+
 ifeq ($(strip($(KEYBOARD))),crkbd/rev1)
   SPLIT_KEYBOARD = yes
 endif

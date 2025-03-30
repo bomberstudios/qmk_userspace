@@ -30,10 +30,11 @@ enum combos {
     COMBO_ENTER_COLEMAK,
     COMBO_TAB,
     COMBO_QUESTION,
+    COMBO_ESC
 };
 
 // const uint16_t PROGMEM combo_tab[] =      {KC_R, KC_T, COMBO_END};
-// const uint16_t PROGMEM combo_esc[] =      {KC_Q, CTL_A, COMBO_END}; // we need to merge this PR for this to work: https://github.com/qmk/qmk_firmware/pull/8591/files
+const uint16_t PROGMEM combo_esc[]                   = {KC_Q, CTL_A, COMBO_END};
 const uint16_t PROGMEM combo_capslock[]              = {CTL_A, ALT_S, COMBO_END};
 const uint16_t PROGMEM combo_capslock_colemak[]      = {CTL_A, ALT_R, COMBO_END};
 const uint16_t PROGMEM combo_parens_left[]           = {SHT_F, KC_R, COMBO_END};
@@ -65,6 +66,7 @@ const uint16_t PROGMEM combo_tab[]               = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM combo_question[]          = {KC_COMM, KC_DOT, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
+    [COMBO_ESC]                   = COMBO(combo_esc, KC_ESC),
     [COMBO_CAPSLOCK]              = COMBO(combo_capslock, KC_CAPS),
     [COMBO_CAPSLOCK_COLEMAK]      = COMBO(combo_capslock_colemak, KC_CAPS),
     [COMBO_PARENS_LEFT]           = COMBO(combo_parens_left, KC_LPRN),

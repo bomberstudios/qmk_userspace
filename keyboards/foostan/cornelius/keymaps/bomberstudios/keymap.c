@@ -1,4 +1,4 @@
-// Cornelius
+// clang-format off
 #include QMK_KEYBOARD_H
 
 // Keyboard Layers
@@ -57,10 +57,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   ),
   [_MOVE] = LAYOUT(
-    _______, _______, L_COL,   CTL_TAB, CMD_TAB, LINEDEL, LINEUP,  START,   KC_UP,   END,     _______, _______,
-    _______, Ctrl,    Alt,     Cmd,     Shift,   LINEDUP, LINEDWN, KC_LEFT, KC_DOWN, KC_RIGHT,KC_ENT,  _______,
-    _______, UNDO,    CUT,     COPY,    CPYPASTE,SKRUN,   SKRUNAG, SHT_SCR, SHT_ARE, SHT_OPT, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, M_PASS2, M_PASS
+    _______, _______, L_COL,   CTL_TAB, CMD_TAB, LINEDEL, LINEUP,  START,   KC_UP,   END,     ZOOMLEFT,_______,
+    _______, Ctrl,    Alt,     Cmd,     Shift,   LINEDUP, LINEDWN, KC_LEFT, KC_DOWN, KC_RIGHT,ZOOMRIGHT,_______,
+    _______, UNDO,    CUT,     COPY,    CPYPASTE,SKRUN,   ZOOMFULL,SHT_SCR, SHT_ARE, SHT_OPT, MOVETOLAPTOP,_______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, M_PASS2,   M_PASS
   ),
   [_NUMBER] = LAYOUT(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, KC_7,    KC_8,    KC_9,    _______, _______,
@@ -81,3 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, L_ADJ,   KC_DEL,  _______, _______, _______, _______, _______, _______
   )
 };
+
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT(
+        'L', 'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', '*', '*', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',   'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',   '*', 'R', 'R', 'R', 'R', 'R',
+        '*', '*', '*', '*', '*', '*',   '*', '*', '*', '*', '*', '*'
+    );
