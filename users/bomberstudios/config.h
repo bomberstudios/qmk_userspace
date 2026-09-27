@@ -3,8 +3,8 @@
 #include "layout.h"
 
 // Tapping terms
-// #undef TAPPING_TERM
-// #define TAPPING_TERM 100
+#undef TAPPING_TERM
+#define TAPPING_TERM 150
 // Turns out I'm not using this anymore
 // #define TAPPING_TERM_PER_KEY
 
