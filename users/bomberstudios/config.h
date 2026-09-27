@@ -8,12 +8,12 @@
 // Turns out I'm not using this anymore
 // #define TAPPING_TERM_PER_KEY
 
-// Triggers mod if you tap another key while holding.
-// #define PERMISSIVE_HOLD
 // Permissive Hold and Hold On Other Key Press are mutually exclusive, so we can't have both. See https://docs.qmk.fm/tap_hold#permissive-hold
-#define HOLD_ON_OTHER_KEY_PRESS
-// Hold On Other Key Press works even worse than Permissive Hold 😅
-// Here's my problem: typing T is harder than typing 'nt' the way I type.
+// Triggers mod if you tap another key while holding.
+#define PERMISSIVE_HOLD
+// Hold On Other Key Press triggers mods a bit too aggressively. Trying to type "entity" moderately quick
+// gives me "eTiY". I don't think I prefer this behavior, so I'm going to pick the less worse, which is permissive hold.
+// #define HOLD_ON_OTHER_KEY_PRESS
 
 // Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
 // Constrains holds to opposite-hand combinations (with exceptions for combos)
