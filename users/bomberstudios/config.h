@@ -3,8 +3,8 @@
 #include "layout.h"
 
 // Tapping terms
-#undef TAPPING_TERM
-#define TAPPING_TERM 150
+// #undef TAPPING_TERM
+// #define TAPPING_TERM 150
 // Turns out I'm not using this anymore
 // #define TAPPING_TERM_PER_KEY
 
@@ -13,11 +13,11 @@
 // #define PERMISSIVE_HOLD
 // Hold On Other Key Press triggers mods a bit too aggressively. Trying to type "entity" moderately quick
 // gives me "eTiY". I don't think I prefer this behavior. But let's try it combined with Flow Tap and see if that helps. If not, I'll try Permissive Hold instead.
-#define HOLD_ON_OTHER_KEY_PRESS
+// #define HOLD_ON_OTHER_KEY_PRESS
 
 // Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
 // Constrains holds to opposite-hand combinations (with exceptions for combos)
-#define CHORDAL_HOLD
+// #define CHORDAL_HOLD
 
 // Retro Tapping. See https://docs.qmk.fm/tap_hold#retro-tapping
 // Holding and releasing a dual-function key without pressing another key will result in nothing happening. With retro tapping enabled, releasing the key without pressing another will send the original keycode even if it is outside the tapping term.
@@ -27,12 +27,12 @@
 // Flow Tap. See https://docs.qmk.fm/tap_hold#flow-tap
 // Disables holds when typing quickly
 // I think this is making my problem with home row mods worse, because I type fast. So I'm going to try disabling it for now.
-#define FLOW_TAP_TERM 150
+// #define FLOW_TAP_TERM 150
 
 // Speculative Hold. See https://docs.qmk.fm/tap_hold#speculative-hold
 // I hope this makes it easier to use Ctrl + Trackpad gestures to zoom in/out on macOS
 // Sept 2026: seems to be working pretty well
-#define SPECULATIVE_HOLD
+// #define SPECULATIVE_HOLD
 
 // #define UNICODE_SELECTED_MODES UC_MAC
 
