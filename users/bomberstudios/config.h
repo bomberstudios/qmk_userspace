@@ -2,23 +2,32 @@
 
 #include "layout.h"
 
+// Tapping terms
 #undef TAPPING_TERM
-
-// Reenabling this because apparently I'm no longer using custom tapping terms per key
-#define PERMISSIVE_HOLD
-#define CHORDAL_HOLD // See https://docs.qmk.fm/tap_hold#chordal-hold
-// #define TAPPING_FORCE_HOLD
-
-// #define HOLD_ON_OTHER_KEY_PRESS
-// See
-// https://github.com/qmk/qmk_firmware/blob/155cc17359711a6dd7b67119ec994800588ebaaa/docs/tap_hold.md#hold-on-other-key-press
-// -> this makes home row mods unusable for fast typists, because you can't do
-// rolls without triggering the wrong combination. So, let's keep it off
-// #define RETRO_TAPPING // wish there was a retro tapping per key, because I'd
-// like to have this only for some keys. But so be it…
-
 #define TAPPING_TERM 150
 #define TAPPING_TERM_PER_KEY
+
+// Triggers mod if you tap another key while holding.
+#define PERMISSIVE_HOLD
+// Permissive Hold and Hold On Other Key Press are mutually exclusive, so we can't have both. See https://docs.qmk.fm/tap_hold#permissive-hold
+// #define HOLD_ON_OTHER_KEY_PRESS
+
+// Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
+// Constrains holds to opposite-hand combinations (with exceptions for combos)
+#define CHORDAL_HOLD
+
+// Retro Tapping. See https://docs.qmk.fm/tap_hold#retro-tapping
+// Holding and releasing a dual-function key without pressing another key will result in nothing happening. With retro tapping enabled, releasing the key without pressing another will send the original keycode even if it is outside the tapping term.
+// #define RETRO_TAPPING // wish there was a retro tapping per key, because I'd like to have this only for some keys.
+// Update in september 2026: there's a retro tapping per key now: https://docs.qmk.fm/tap_hold#retro-tapping
+
+// Flow Tap. See https://docs.qmk.fm/tap_hold#flow-tap
+// Disables holds when typing quickly
+#define FLOW_TAP_TERM 150
+
+// Speculative Hold. See https://docs.qmk.fm/tap_hold#speculative-hold
+// I hope this makes it easier to use Ctrl + Trackpad gestures to zoom in/out on macOS
+#define SPECULATIVE_HOLD
 
 // #define UNICODE_SELECTED_MODES UC_MAC
 
