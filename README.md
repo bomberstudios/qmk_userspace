@@ -1,5 +1,15 @@
 # My QMK user space
 
+>[!NOTE]
+> TLDR: push new changes to GitHub, open <https://github.com/bomberstudios/qmk_userspace/actions/runs/> to grab your new firmware, and run these commands to flash:
+>
+> ```
+> dfu-programmer atmega32u4 erase --force
+> dfu-programmer atmega32u4 flash --force /Users/ale/Downloads/Firmware/foostan_cornelius_bomberstudios.hex
+> ```
+>
+> You'll need to set your keyboard in boot mode first, with Symbol Layer + Z
+
 This is a template repository which allows for an external set of QMK keymaps to be defined and compiled. This is useful for users who want to maintain their own keymaps without having to fork the [main QMK repository](https://github.com/qmk/qmk_firmware). You must still fork the main QMK repository if writing firmware for a *new* keyboard.
 
 ## Howto configure your build targets
@@ -44,6 +54,7 @@ Alternatively, if you configured your build targets above, you can use `qmk user
 If you wish to point GitHub actions to a different repository, a different branch, or even a different keymap name, you can modify `.github/workflows/build_binaries.yml` to suit your needs.
 
 To override the `build` job, you can change the following parameters to use a different QMK repository or branch:
+
 ```
     with:
       qmk_repo: qmk/qmk_firmware
