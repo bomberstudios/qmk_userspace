@@ -35,3 +35,5 @@ endif
 
 # To enable using the Globe key as a modifier, seen in <https://skip.house/blog/qmk-globe-key>
 KEYBOARD_SHARED_EP = yes
+
+DYNAMIC_TAPPING_TERM_ENABLE = yes

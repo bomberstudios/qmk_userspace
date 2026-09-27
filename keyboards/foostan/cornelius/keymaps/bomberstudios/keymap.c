@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [_SYMBOL] = LAYOUT(
     _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,
-    _______, M_EMAIL, _______, KC_GRV,  KC_QUOT, KC_COLN, KC_BSLS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______,
-    _______, QK_BOOT, _______, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, _______,
-    _______, _______, _______, _______, L_ADJ,   KC_DEL,  _______, _______, _______, _______, _______, _______
+    _______, M_EMAIL, QK_DYNAMIC_TAPPING_TERM_UP, KC_GRV,  KC_QUOT, KC_COLN, KC_BSLS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, _______,
+    _______, QK_BOOT, QK_DYNAMIC_TAPPING_TERM_DOWN, KC_TILD, KC_DQUO, KC_SCLN, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, _______,
+    _______, _______, QK_DYNAMIC_TAPPING_TERM_PRINT, _______, L_ADJ,   KC_DEL,  _______, _______, _______, _______, _______, _______
   ),
   [_ADJUST] = LAYOUT(
     _______, QWERTY,  COLEMAK, _______, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_VOLU, _______,
