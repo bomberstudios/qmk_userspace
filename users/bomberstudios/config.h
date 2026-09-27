@@ -4,7 +4,7 @@
 
 // Tapping terms
 // #undef TAPPING_TERM
-#define TAPPING_TERM 100
+// #define TAPPING_TERM 100
 // Turns out I'm not using this anymore
 // #define TAPPING_TERM_PER_KEY
 
