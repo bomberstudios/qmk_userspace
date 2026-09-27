@@ -10,10 +10,10 @@
 
 // Permissive Hold and Hold On Other Key Press are mutually exclusive, so we can't have both. See https://docs.qmk.fm/tap_hold#permissive-hold
 // Triggers mod if you tap another key while holding.
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 // Hold On Other Key Press triggers mods a bit too aggressively. Trying to type "entity" moderately quick
-// gives me "eTiY". I don't think I prefer this behavior, so I'm going to pick the less worse, which is permissive hold.
-// #define HOLD_ON_OTHER_KEY_PRESS
+// gives me "eTiY". I don't think I prefer this behavior. But let's try it combined with Flow Tap and see if that helps. If not, I'll try Permissive Hold instead.
+#define HOLD_ON_OTHER_KEY_PRESS
 
 // Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
 // Constrains holds to opposite-hand combinations (with exceptions for combos)
@@ -27,7 +27,7 @@
 // Flow Tap. See https://docs.qmk.fm/tap_hold#flow-tap
 // Disables holds when typing quickly
 // I think this is making my problem with home row mods worse, because I type fast. So I'm going to try disabling it for now.
-// #define FLOW_TAP_TERM 150
+#define FLOW_TAP_TERM 150
 
 // Speculative Hold. See https://docs.qmk.fm/tap_hold#speculative-hold
 // I hope this makes it easier to use Ctrl + Trackpad gestures to zoom in/out on macOS
