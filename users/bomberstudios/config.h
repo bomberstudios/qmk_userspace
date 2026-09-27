@@ -8,9 +8,10 @@
 #define TAPPING_TERM_PER_KEY
 
 // Triggers mod if you tap another key while holding.
-// #define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
 // Permissive Hold and Hold On Other Key Press are mutually exclusive, so we can't have both. See https://docs.qmk.fm/tap_hold#permissive-hold
-#define HOLD_ON_OTHER_KEY_PRESS
+// #define HOLD_ON_OTHER_KEY_PRESS
+// Hold On Other Key Press works even worse than Permissive Hold 😅
 
 // Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
 // Constrains holds to opposite-hand combinations (with exceptions for combos)
