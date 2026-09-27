@@ -3,9 +3,8 @@
 #include "layout.h"
 
 // Tapping terms
-// Let's see how things work with the default tapping term of 200ms
 // #undef TAPPING_TERM
-// #define TAPPING_TERM 150
+#define TAPPING_TERM 100
 // Turns out I'm not using this anymore
 // #define TAPPING_TERM_PER_KEY
 
