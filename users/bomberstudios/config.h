@@ -8,9 +8,9 @@
 #define TAPPING_TERM_PER_KEY
 
 // Triggers mod if you tap another key while holding.
-#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD
 // Permissive Hold and Hold On Other Key Press are mutually exclusive, so we can't have both. See https://docs.qmk.fm/tap_hold#permissive-hold
-// #define HOLD_ON_OTHER_KEY_PRESS
+#define HOLD_ON_OTHER_KEY_PRESS
 
 // Chordal Hold. See https://docs.qmk.fm/tap_hold#chordal-hold
 // Constrains holds to opposite-hand combinations (with exceptions for combos)
@@ -27,6 +27,7 @@
 
 // Speculative Hold. See https://docs.qmk.fm/tap_hold#speculative-hold
 // I hope this makes it easier to use Ctrl + Trackpad gestures to zoom in/out on macOS
+// Sept 2026: seems to be working pretty well
 #define SPECULATIVE_HOLD
 
 // #define UNICODE_SELECTED_MODES UC_MAC
